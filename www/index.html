@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baterry Health</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/2e7d0c38c7.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="mostrar()">
+<div class="tela-inicial">
+    <div class="container-box">
+    <img src="img/batteryhealthsplashscreen.png" alt="Logo">
+    <h1>Bem vindo!</h1>
+    <h2>Clique em iniciar para abrir o app de monitoramento de bateria.</h2>
+    <button onclick="iniciar()">Iniciar <i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+</div>
+    <div class="blur">
+        <header>
+            <h1>Battery Health</h1>
+        </header>
+
+        <main>
+            <div class="battery">
+                <h3>Battery</h3>
+                <span id="level"></span>
+                <p id="stateBattery">Normal</p>
+            </div>
+            <div class="battery-progress">
+                <div id="progress-bar"></div>
+            </div>
+        </main>
+        <div class="container">
+            <section>
+                <h1>TIMER</h1>
+                <div class="time">
+                    <h1 id="stateBatterytime"></h1>
+                    <p>min</p>
+                </div>
+                <p id="stateBattery2">Normal</p>
+
+            </section>
+            <aside>
+                <button id="dicas" class="button" onclick="dicasModal()">Dicas</button>
+                <button id="detalhes" class="button2" onclick="detalhesModal()">Detalhes</button>
+                <button id="noti" class="button3" disabled="true">Notificação</button>
+                <a onclick="configModal()"><i class="fa-solid fa-gear" style="color:#161616; font-size: 40px;"></i></a>
+            </aside>
+        </div>
+    </div>
+
+    <div id="dicasModal">
+        <a onclick="FecharModal()" title="Fechar" class="closeModal">X</a>
+        <h1>DICAS</h1>
+        <p>
+            <strong>1.</strong> Mantenha a carga sempre entre 20 e 80% As baterias não são mais de níquel como
+            antigamente – são de lítio,
+            isso significa que descarregar ou carregar tudo pode desgastar o material. Resultado: a bateria dura menos.
+            Portanto, a dica para aumentar
+            a durabilidade é evitar descarregar a bateria completamente, ou manter carregando depois de
+            100%.
+            <br>
+            <strong>2.</strong> Use somente carregadores originais Se o carregador original foi perdido ou quebrado, não
+            pule para um genérico.
+            Os cabos do fabricante do seu celular têm configurações técnicas compatíveis com a bateria – os genéricos
+            podem até funcionar, mas
+            como não são feitos sob medida, tendem a diminuir a vida útil dela.
+            <br>
+            <strong>3.</strong> Evite carregar o
+            celular no
+            computador As correntes que
+            passam pelas entradas USB do computador e celular oscilam bastante – e essa mudança pode aumentar a
+            temperatura, fator que diminui a vida útil da bateria. Só pra gente ter noção do perigo, um estudo na área
+            mostra que ela perde até 65% da
+            capacidade quando exposta a temperaturas acima de 40ºC.Por isso, carregue na tomada, onde as correntes
+            são muito mais estáveis e a temperatura não aumenta a tal ponto.
+            <br> 
+            <strong>4.</strong> Retire o brilho automático A parte
+            relacionada à iluminação do
+            seu celular consome bastante energia. Quando o brilho da tela está no automático, ele gasta mais bateria por
+            dois motivos: a intensidade muda a cada mudança de claridade do ambiente, e porque o brilho pode estar bem
+            acima do necessário. Para essa parte, a sugestão é desativar o brilho automático. Assim, ele não muda
+            sozinho e você pode deixar mais baixo. 
+            <br>
+            <strong>5.</strong> Configure a luz de fundo A luz de fundo é o tempo que o celular
+            fica com o brilho ativo depois que você para de mexer.
+            O ideal é configurá-la para menos de 30 segundos – ou seja, depois desse período sem toque, a tela apaga
+            automaticamente.
+            <br> 
+            <strong>6.</strong> Configure programas em segundo plano Alguns programas, mesmo que retirados do segundo plano,
+            continuam funcionando – apps de meteorologia que atualizam de hora em hora, ou localização, por exemplo.
+            Para a bateria durar mais, a saída
+            é configurar cada um deles de acordo com a necessidade. Ative a localização quando você realmente vai
+            usar o gps, deixe o Wi-Fi ligado somente para se conectar a uma rede e configure a previsão do tempo para
+            atualizar uma ou duas vezes
+            por dia. 
+            <br> 
+            <strong>7.</strong> Desligue o modo vibrar A vibração do seu celular precisa ser forte para garantir um movimento
+            perceptível em diversas situações. Usar sons para toques e notificações é uma opção mais adequada para quem
+            quer o máximo de economia
+            de energia possível, pois o gasto de energia é menor para carregar e emitir o som do que para o motor vibrar
+            o aparelho. Ou seja, desligue a vibração nas situações em que puder.
+            <br> 
+            <strong>8.</strong> Use o modo economia da bateria É
+            comum, pelo menos para
+            os usuários do Android, que o smartphone avise que recurso de economia de energia está disponível quando a
+            bateria está acabando. Mas o recurso está sempre disponível e pode ser ativado em qualquer momento, muito
+            útil para quem quer economizar
+            bateria.<br> 
+            <strong>9.</strong> Apague apps que consomem bateria Sabe aquele aplicativo que você baixou e usou uma vez e nunca mais
+            abriu? Saiba que ele pode estar consumindo recursos do seu smartphone, inclusive sua bateria. Uma dica
+            adicional, os dispositivos contam
+            um relatório que informa os aplicativos menos usados, vale conferir.
+            <br> 
+            <strong>10.</strong> Escolha um papel de parede
+            adequado Há quem diga que usar uma imagem com poucas cores é a melhor opção, mas talvez não seja para tanto.
+            Nossa dica é para evitar os
+            wallpapers animados, no caso de dispositivos que contam com essa opção. O mesmo serve para o uso de widgets,
+            que consomem mais processamento, consequentemente mais bateria.
+        </p>
+    </div>
+
+    <div id="config">
+        <a onclick="FecharModal()" title="Fechar" class="closeModal">X</a>
+        <h1>CONFIG</h1>
+        <ul>
+            <li>
+                <h1>MODO CLARO</h1>
+                <div class="toggle-switch">
+                    <input class="toggle-input" id="toggle" type="checkbox" onchange="modoClaro()">
+                    <label class="toggle-label" for="toggle"></label>
+                </div>
+
+            </li>
+        </ul>
+    </div>
+    <div id="det">
+        <a onclick="FecharModal()" title="Fechar" class="closeModal">X</a>
+        <h1>Detalhes</h1>
+        <ul>
+            <li>
+                <h3 id="idCelular">Recarregue o app.</h3>
+            </li>
+            <li>
+                <p>Aqui fica as informações "cruas"
+                <p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
